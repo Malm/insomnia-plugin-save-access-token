@@ -2,11 +2,13 @@
   "name": "insomnia-plugin-save-access-token",
   "version": "1.0.0",
   "author": "Erik Malm <erik.m.malm@gmail.com>",
-  "main": "plugin.js",
+  "license": "MIT",
+  "main": "index.js",
   "insomnia": {
     "name": "save-access-token",
     "description": "Get a token from a login response and save it a template variable"
   },
+  "repository": "https://github.com/malm/insomnia-plugin-save-access-token",
   "dependencies": [],
   "devDependencies": [],
   "keywords": [
