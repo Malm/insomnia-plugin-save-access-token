@@ -14,8 +14,8 @@ const templateTags = [{
             defaultValue: '.*(localhost).*\/(login)'
         },
         {
-            displayName: 'Token parameter',
-            description: 'The name of the token parameter',
+            displayName: 'Token parameter path',
+            description: 'The path of the token from the response separated by dots',
             type: 'string',
             defaultValue: 'accessToken'
         }
@@ -40,9 +40,18 @@ const responseHooks = [
         const urlMatch = regexp.test(context.request.getUrl());
         if (urlMatch) {
             try {
-                const body = JSON.parse(context.response.getBody().toString('utf-8'));
-                if (body[tokenProperty]) {
-                    token = body[tokenProperty];
+                let response = JSON.parse(context.response.getBody().toString('utf-8'));
+                tokenProperty = tokenProperty.split('.');
+                for (var i = 0; i < tokenProperty.length; i++) {
+                    if (response[tokenProperty[i]] == undefined) {
+                        throw new Error(tokenProperty[i] + ' not found')
+                    } else {
+                        response = response[tokenProperty[i]];
+                    }
+                }
+
+                if (typeof response === 'string') {
+                    token = response;
                 }
             } catch (err) {
                 console.log(`Error getting token from request with message ${err.message}`, err);
