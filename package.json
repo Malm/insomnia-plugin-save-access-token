@@ -1,6 +1,6 @@
 {
   "name": "insomnia-plugin-save-access-token",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "Erik Malm <erik.m.malm@gmail.com>",
   "license": "MIT",
   "main": "index.js",
