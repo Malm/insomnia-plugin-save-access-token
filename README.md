@@ -4,7 +4,7 @@ An [Insomnia](https://insomnia.rest/) plugin to save a access token from a login
 
 ![](https://raw.githubusercontent.com/Malm/insomnia-plugin-save-access-token/master/screen-1.png)
 
-The saved token is accessed thourgh a template variable and can be used in request parameters, headers etc.
+The saved token is accessed through a template variable and can be used in request parameters, headers etc.
 
 ![](https://raw.githubusercontent.com/Malm/insomnia-plugin-save-access-token/master/screen-2.png)
 
